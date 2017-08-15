@@ -24,6 +24,7 @@
 
         td:last-child {
             text-align: right;
+            width: 20%;
         }
     </style>
 </head>
@@ -53,7 +54,7 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
+                @Html.ActionLink("Edit", "Edit", new { id=item.CategorySlug }) |
                 @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
             </td>
