@@ -79,6 +79,7 @@ namespace TDS171A_Diogo.Controllers
 
             category.Name = modified.Name;
             category.Description = modified.Description;
+            category.CategorySlug = category.Name.GenerateSlug();
 
             return RedirectToAction("Index");
         }
