@@ -38,5 +38,49 @@ namespace TDS171A_Diogo.Controllers
 
             return RedirectToAction("Create");
         }
+
+        public ActionResult Details(string id)
+        {
+            var category = categoryList
+                .Where(c => c.CategorySlug == id)
+                .First();
+
+            category = categoryList
+                .First(c => c.CategorySlug == id);
+
+            return View(category);
+        }
+
+        /*public ActionResult Details(long id)
+        {
+            var category = categoryList
+                .Where(c => c.CategoryId == id)
+                .First();
+
+            return View(category);
+        }*/
+
+        public ActionResult Edit(long id)
+        {
+            var category = categoryList
+                .Where(c => c.CategoryId == id)
+                .First();
+
+            return View(category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Category modified)
+        {
+            var category = categoryList
+                .Where(c => c.CategoryId == modified.CategoryId)
+                .First();
+
+            category.Name = modified.Name;
+            category.Description = modified.Description;
+
+            return RedirectToAction("Index");
+        }
     }
 }
