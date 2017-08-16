@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TDS171A_Diogo.Models;
+using TDS171A_Diogo.Utils;
 
 namespace TDS171A_Diogo.Controllers
 {
@@ -19,6 +20,23 @@ namespace TDS171A_Diogo.Controllers
         public ActionResult Index()
         {
             return View(categoryList.OrderBy(c => c.Name));
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Category category)
+        {
+            categoryList.Add(category);
+
+            category.CategoryId = categoryList.Max(c => c.CategoryId + 1);
+            category.CategorySlug = category.Name.GenerateSlug();
+
+            return RedirectToAction("Create");
         }
     }
 }
