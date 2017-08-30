@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TestWebApplication.Contexts;
+using TDS171A_Prog_Visual.Contexts;
 
-namespace TestWebApplication.Controllers
+namespace TDS171A_Prog_Visual.Controllers
 {
     public class HomeController : Controller
     {
@@ -19,7 +19,7 @@ namespace TestWebApplication.Controllers
             ViewBag.Fabricantes = context.Fabricantes.OrderBy(c => c.Nome).ToArray();
             ViewBag.Produtos = context.Produtos.Include(c => c.Categoria).Include(f => f.Fabricante).OrderBy(n => n.Nome);
 
-            return View(context.Categorias);
+            return View();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TestWebApplication.Models
+namespace TDS171A_Prog_Visual.Models
 {
     public class Produto
     {

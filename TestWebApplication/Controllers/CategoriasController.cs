@@ -5,10 +5,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using TestWebApplication.Contexts;
-using TestWebApplication.Models;
+using TDS171A_Prog_Visual.Contexts;
+using TDS171A_Prog_Visual.Models;
 
-namespace TestWebApplication.Controllers {
+namespace TDS171A_Prog_Visual.Controllers {
     public class CategoriasController : Controller {
         /*private static IList<Categoria> categorias = new List<Categoria>() {
             new Categoria() {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using TestWebApplication.Models;
+using TDS171A_Prog_Visual.Models;
 
-namespace TestWebApplication.Contexts
+namespace TDS171A_Prog_Visual.Contexts
 {
     public class EFContext : DbContext
     {
